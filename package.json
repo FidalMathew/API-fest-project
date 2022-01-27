@@ -1,0 +1,26 @@
+{
+  "name": "api-fest-project",
+  "version": "1.0.0",
+  "description": "API fest project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leoravoe/API-fest-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leoravoe/API-fest-project/issues"
+  },
+  "homepage": "https://github.com/Leoravoe/API-fest-project#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8"
+  }
+}
