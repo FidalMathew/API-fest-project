@@ -2,7 +2,7 @@ const { Router } = require('express')
 const {
   getExpenseUser,
   createExpenseUser,
-  getAllExpenseByUserId,
+  getAllExpenseByUserId
 } = require('../controllers/expenseController')
 
 const router = Router()

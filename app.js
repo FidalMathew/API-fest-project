@@ -40,3 +40,4 @@ app.get('/', (req, res) => {
 // route for github login controllers
 app.use('/api', require('./routes/userRoutes'))
 app.use('/api', require('./routes/expenseRoutes'))
+app.use('/api', require('./routes/incomeRoutes'))

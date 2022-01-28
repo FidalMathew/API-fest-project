@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
 
 const incomeSchema = new mongoose.Schema({
-    income: {
-        type: Number,
-        required: true
-    },
-    typeOfOp : {
-        type: String,
-        required: true
-    },
+  income: {
+    type: Number,
+    required: true
+  },
+  typeOfOp: {
+    type: String,
+    required: true
+  },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref : 'users'
+        ref: 'users'
     },
     category: {
         type: String,
@@ -22,7 +22,7 @@ const incomeSchema = new mongoose.Schema({
         required: true
     },
     notes: {
-        type: String,
+        type: String
     }
 }
 ,
@@ -30,4 +30,4 @@ const incomeSchema = new mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('income', incomeSchema);
+module.exports = mongoose.model('income', incomeSchema)
