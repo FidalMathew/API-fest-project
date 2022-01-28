@@ -19,7 +19,7 @@ router.post('/signinAuth',signinAuth);
 router.get('/logout',logout);
 //  route for getting all the cashflow
 router.get('/cashflow/:userId',checkUser,getCashflow);
-router.get('/details/:id',detailsOfUser)
+router.get('/details/:id',checkUser,detailsOfUser)
 
 
 module.exports = router;
