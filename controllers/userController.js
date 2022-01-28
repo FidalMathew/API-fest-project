@@ -106,6 +106,7 @@ const signinAuth = async (req, res) => {
         }
         
     } catch (err) {
+        // console.log(err)
         // throwing error object to custom error handling function
         const error = handleError(err)
         // return custom error object in response

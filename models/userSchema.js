@@ -48,9 +48,6 @@ userSchema.statics.login = async function(email,password) {
     const user = await this.findOne({email});
     // check if the user exists or not 
     if(user){
-        // if user exist than comparing the hashed password 
-        // provided by the user for login with the user password 
-        // fetched from the database
         const auth = await bcrypt.compare(password, user.password);
         // checking if the authentication is successful or not
         if(auth){
