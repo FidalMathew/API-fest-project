@@ -49,6 +49,8 @@ const signupAuth = async (req, res) => {
             req.body.balance =0
             req.body.credit =0
             req.body.debit =0
+            req.body.targetIncome =0
+            req.body.targetSavings =0
             const body = req.body;
             // create user
             const user = await User.create(body);
