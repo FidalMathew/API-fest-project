@@ -62,8 +62,7 @@ const signupAuth = async (req, res) => {
             res.status(201).json({
                 _id : user._id,
                 name: user.name,
-                email: user.email,
-                token
+                email: user.email
             })
         }else{
             // return response if empty req body
