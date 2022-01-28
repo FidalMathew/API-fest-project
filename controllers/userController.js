@@ -96,6 +96,8 @@ const signinAuth = async (req, res) => {
                 balance: user.balance,
                 credit: user.credit,
                 debit: user.debit,
+                targetSavings : user.targetSavings,
+                targetIncome: user.targetIncome,
                 token
             });
         }else{
