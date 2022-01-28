@@ -45,6 +45,9 @@ const signupAuth = async (req, res) => {
     try {
         // check for empty req body or not
         if(Object.keys(req.body)){
+            req.body.balance =0
+            req.body.credit =0
+            req.body.debit =0
             const body = req.body;
             // create user
             const user = await User.create(body);
@@ -88,6 +91,9 @@ const signinAuth = async (req, res) => {
                 _id : user._id,
                 name: user.name,
                 email: user.email,
+                balance: user.balance,
+                credit: user.credit,
+                debit: user.debit,
                 token
             });
         }else{
@@ -119,18 +125,18 @@ const logout = async (req, res) => {
 };
 
 
-const createUser = async (req, res) => {
-    try {
-        const body = req.body;
-        const user = await User.findByIdAndUpdate(req.params.id,body);
-        res.status(204).json()
-    } catch (error) {
-        res.status(500).json(error)
-    }
-}
+// const createUser = async (req, res) => {
+//     try {
+//         const body = req.body;
+//         const user = await User.findByIdAndUpdate(req.params.id,body);
+//         res.status(204).json()
+//     } catch (error) {
+//         res.status(500).json(error)
+//     }
+// }
 
 module.exports= {
-    createUser,
+    // createUser,
     signupAuth,
     signinAuth,
     logout

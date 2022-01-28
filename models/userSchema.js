@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
     },
     balance: {
         type: Number,
-        required: true
     },
     credit: {
         type: Number,
@@ -33,12 +32,9 @@ const userSchema = new mongoose.Schema({
 // hashing passwords before it gets created in database
 // through mongoose pre save middleware
 
-userLoginSchema.pre('save', async function(next) {
+userSchema.pre('save', async function(next) {
     // generating salt to hash password
     const salt = await bcrypt.genSalt();
-    this.balance = 0;
-    this.credit = 0;
-    this.debit = 0;
     // hashing password  with the salt generated
     this.password = await bcrypt.hash(this.password,salt);
     next();
@@ -47,7 +43,7 @@ userLoginSchema.pre('save', async function(next) {
 // custom middleware for login for checking email and 
 // password and return the json data
 
-userLoginSchema.statics.login = async function(email,password) {
+userSchema.statics.login = async function(email,password) {
     // finding user with this email
     const user = await this.findOne({email});
     // check if the user exists or not 
