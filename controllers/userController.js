@@ -13,7 +13,6 @@ const createToken = (id) => {
 // custom function for error login/ signup handling
 
 const handleError = (err) => {
-    // console.log(err.code)
     // initialize demo error objects
     let errors = {succes:'false' ,email: '', password: '' };
     if (err.message === 'Invalid password') {
@@ -50,6 +49,8 @@ const signupAuth = async (req, res) => {
             req.body.balance =0
             req.body.credit =0
             req.body.debit =0
+            req.body.targetIncome =0
+            req.body.targetSavings =0
             const body = req.body;
             // create user
             const user = await User.create(body);
@@ -71,7 +72,6 @@ const signupAuth = async (req, res) => {
             })
         }
     } catch (err) {
-        // console.log(err);
         const error = handleError(err);
         res.status(400).json({ error});
     }
@@ -96,6 +96,8 @@ const signinAuth = async (req, res) => {
                 balance: user.balance,
                 credit: user.credit,
                 debit: user.debit,
+                targetSavings : user.targetSavings,
+                targetIncome: user.targetIncome,
                 token
             });
         }else{
@@ -106,7 +108,6 @@ const signinAuth = async (req, res) => {
         }
         
     } catch (err) {
-        // console.log(err)
         // throwing error object to custom error handling function
         const error = handleError(err)
         // return custom error object in response
@@ -119,7 +120,7 @@ const signinAuth = async (req, res) => {
 //  controller for normal login's logout
 const logout = async (req, res) => {
     try {
-        // clearing all the cookies from the browser
+        // clearing the cookies from the browser
         res.cookie('JWTtoken','',{ maxAge: 1});
         res.status(200).redirect('/');
     } catch (error) {
@@ -131,27 +132,69 @@ const logout = async (req, res) => {
 const getCashflow = async (req, res) => {
     try {
         let cashflow = []
+        // find all income by user id
         const income = await Income.find({
             userId: req.params.userId
         })
+        // find all expense by user id
         const expense = await Expense.find({
             userId: req.params.userId
         })
+        // pushing into the cashflow array
         cashflow.push(...income)
         cashflow.push(...expense)
+        // sorting according to the time stamps
         cashflow.sort((x, y) =>{
             return x.createdAt - y.createdAt;
         })
+        // send response
         res.status(200).json(cashflow)
     } catch (error) {
         res.status(500).json(error)
     }
 }
 
+const detailsOfUser = async (req, res) => {
+    try {
+        let cashflow = []
+        // find the user by _id
+        const user = await User.findById(req.params.id).select('-password')
+        // find all income by user id
+        const income = await Income.find({
+            userId: req.params.id
+        })
+        // find all expense by user id
+        const expense = await Expense.find({
+            userId: req.params.id
+        })
+        // pushing into the cashflow array
+        cashflow.push(...income)
+        cashflow.push(...expense)
+        // sorting according to the time stamps
+        cashflow.sort((x, y) =>{
+            return x.createdAt - y.createdAt;
+        })
+        // send response
+        res.status(200).json({user,cashflow})
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
+const updateUser = async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id, req.body)
+        res.status(204).json()
+    } catch (error) {
+        res.status(500).json({error: error.message})
+    }
+}
+
 module.exports= {
-    // createUser,
+    updateUser,
     signupAuth,
     signinAuth,
     logout,
-    getCashflow
+    getCashflow,
+    detailsOfUser
 }
