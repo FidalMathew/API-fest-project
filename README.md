@@ -5,11 +5,11 @@
 
 <!-- - [PPT]() -->
 
-## 🔗 Postman workspace Links
+## 🔗 Links
 - [Postman workspace](https://app.getpostman.com/join-team?invite_code=4238df0aec25011bc62434c2e9ca0d5f&target_code=75dad532e99a0b9bce6e3e2b836772db)
 
-## 🔗 Video Links
 - [Video Explanation]()
+- [Frontend Repository]()
 
 ## 💡 Features
 - Created personal dashboard for the user to have detail overview of their budget
@@ -28,7 +28,7 @@ You can download the NodeJs from <a href="https://nodejs.org/en/">here</a>
 ### 2️⃣ Clone the repo
 
 ```sh
-$ git clone https://github.com/Leoravoe/.git
+$ git clone https://github.com/FidalMathew/API-fest-project
 ```
 ### 3️⃣ Run the project :arrow_up:
 - do ```npm install``` in terminal in the root directory
