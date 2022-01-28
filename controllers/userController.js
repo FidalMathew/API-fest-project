@@ -150,10 +150,38 @@ const getCashflow = async (req, res) => {
     }
 }
 
+const detailsOfUser = async (req, res) => {
+    try {
+        let cashflow = []
+        // find the user by _id
+        const user = await User.findById(req.params.id).select('-password')
+        // find all income by user id
+        const income = await Income.find({
+            userId: req.params.id
+        })
+        // find all expense by user id
+        const expense = await Expense.find({
+            userId: req.params.id
+        })
+        // pushing into the cashflow array
+        cashflow.push(...income)
+        cashflow.push(...expense)
+        // sorting according to the time stamps
+        cashflow.sort((x, y) =>{
+            return x.createdAt - y.createdAt;
+        })
+        // send response
+        res.status(200).json({user,cashflow})
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
+
 module.exports= {
     // createUser,
     signupAuth,
     signinAuth,
     logout,
-    getCashflow
+    getCashflow,
+    detailsOfUser
 }

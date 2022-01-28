@@ -4,7 +4,8 @@ const {
     signupAuth,
     signinAuth,
     logout,
-    getCashflow } = require('../controllers/userController')
+    getCashflow,
+    detailsOfUser } = require('../controllers/userController')
 const {checkUser} = require('../middlewares/authMiddlewares')
 
 
@@ -18,6 +19,7 @@ router.post('/signinAuth',signinAuth);
 router.get('/logout',logout);
 //  route for getting all the cashflow
 router.get('/cashflow/:userId',checkUser,getCashflow);
+router.get('/details/:id',detailsOfUser)
 
 
 module.exports = router;
