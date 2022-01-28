@@ -26,6 +26,12 @@ const userSchema = new mongoose.Schema({
     },
     debit: {
         type: Number,
+    },
+    targetIncome: {
+        type: Number,
+    },
+    targetSavings: {
+        type: Number,
     }
 });
 
