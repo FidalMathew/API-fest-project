@@ -4,8 +4,7 @@
   "description": "API fest project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,13 +17,13 @@
   },
   "homepage": "https://github.com/Leoravoe/API-fest-project#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "nodemon": "^2.0.15"
-  },
-  "devDependencies": {
-    "mongoose": "^6.1.8"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8",
+    "validator": "^13.7.0"
   }
 }
