@@ -23,8 +23,6 @@
 
 You can download the NodeJs from <a href="https://nodejs.org/en/">here</a>
 
-<br>
-
 ### 2️⃣ Clone the repo
 
 ```sh
