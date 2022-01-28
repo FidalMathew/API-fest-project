@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/userSchema')
+const Income = require('../models/incomeSchema')
+const Expense = require('../models/expenseSchema')
 const maxAge = 3 * 24 * 60 * 60;
 
 // custom function for creating token
@@ -125,19 +127,30 @@ const logout = async (req, res) => {
 };
 
 
-// const createUser = async (req, res) => {
-//     try {
-//         const body = req.body;
-//         const user = await User.findByIdAndUpdate(req.params.id,body);
-//         res.status(204).json()
-//     } catch (error) {
-//         res.status(500).json(error)
-//     }
-// }
+const getCashflow = async (req, res) => {
+    try {
+        let cashflow = []
+        const income = await Income.find({
+            userId: req.params.userId
+        })
+        const expense = await Expense.find({
+            userId: req.params.userId
+        })
+        cashflow.push(...income)
+        cashflow.push(...expense)
+        cashflow.sort((x, y) =>{
+            return x.createdAt - y.createdAt;
+        })
+        res.status(200).json(cashflow)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
 
 module.exports= {
     // createUser,
     signupAuth,
     signinAuth,
-    logout
+    logout,
+    getCashflow
 }
