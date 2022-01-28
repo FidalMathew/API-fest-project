@@ -13,7 +13,6 @@ const createToken = (id) => {
 // custom function for error login/ signup handling
 
 const handleError = (err) => {
-    // console.log(err.code)
     // initialize demo error objects
     let errors = {succes:'false' ,email: '', password: '' };
     if (err.message === 'Invalid password') {
@@ -71,7 +70,6 @@ const signupAuth = async (req, res) => {
             })
         }
     } catch (err) {
-        // console.log(err);
         const error = handleError(err);
         res.status(400).json({ error});
     }
@@ -106,7 +104,6 @@ const signinAuth = async (req, res) => {
         }
         
     } catch (err) {
-        // console.log(err)
         // throwing error object to custom error handling function
         const error = handleError(err)
         // return custom error object in response
@@ -119,7 +116,7 @@ const signinAuth = async (req, res) => {
 //  controller for normal login's logout
 const logout = async (req, res) => {
     try {
-        // clearing all the cookies from the browser
+        // clearing the cookies from the browser
         res.cookie('JWTtoken','',{ maxAge: 1});
         res.status(200).redirect('/');
     } catch (error) {
@@ -131,17 +128,22 @@ const logout = async (req, res) => {
 const getCashflow = async (req, res) => {
     try {
         let cashflow = []
+        // find all income by user id
         const income = await Income.find({
             userId: req.params.userId
         })
+        // find all expense by user id
         const expense = await Expense.find({
             userId: req.params.userId
         })
+        // pushing into the cashflow array
         cashflow.push(...income)
         cashflow.push(...expense)
+        // sorting according to the time stamps
         cashflow.sort((x, y) =>{
             return x.createdAt - y.createdAt;
         })
+        // send response
         res.status(200).json(cashflow)
     } catch (error) {
         res.status(500).json(error)
