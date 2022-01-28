@@ -49,44 +49,6 @@ $ git clone https://github.com/Leoravoe/.git
 <img src="https://github.com/Leoravoe/API-fest-project/blob/main/images/cashflow.png">
 <img src="https://github.com/Leoravoe/API-fest-project/blob/main/images/userDetails.png">
 
-
-## 👣 Steps to run the project 
-### 1️⃣ Install Node.js
-
-You can download the NodeJs from <a href="https://nodejs.org/en/">here</a>
-
-<br>
-
-### 2️⃣ Clone the repo
-
-```sh
-$ git clone https://github.com/FidalMathew/API-fest-project
-```
-### 3️⃣ Run the project :arrow_up:
-- do ```npm install``` in terminal in the root directory
-- do ```npm start``` in the terminal
-- create a ```.env``` file in the root directory
-- now create the following environment variables given below
-> DB_URI= "MongoDB URI here"
-> PORT = 8080 || or desirable port number
-> JWT_SECRET = "Enter a secret key of your choice"
-- Now your good to go !!
-
-
-
-
-## Tech Stacks & dependencies
-
-##### 🌟 Frontend
-- ReactJs
-- Tailwind CSS
-- Redux
-
-##### 🌟 Backend
-- Nodejs
-- expressjs
-- MongoDB
-
 ## made with 💕 by 👨‍💻: 
 - [Preetam Sarkar](https://github.com/Leoravoe)
 - [Sayantan Sarkar](https://github.com/sayskar500)
