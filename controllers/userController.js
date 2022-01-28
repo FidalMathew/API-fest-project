@@ -181,8 +181,17 @@ const detailsOfUser = async (req, res) => {
     }
 }
 
+const updateUser = async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id, req.body)
+        res.status(204).json()
+    } catch (error) {
+        res.status(500).json({error: error.message})
+    }
+}
+
 module.exports= {
-    // createUser,
+    updateUser,
     signupAuth,
     signinAuth,
     logout,
