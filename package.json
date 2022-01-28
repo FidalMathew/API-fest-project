@@ -21,6 +21,8 @@
     "cors": "^2.8.5",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
-    "mongoose": "^6.1.8"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8",
+    "validator": "^13.7.0"
   }
 }
