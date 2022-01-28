@@ -26,7 +26,7 @@ const createExpenseUser = async (req, res) => {
 const getAllExpenseByUserId = async (req, res) => {
   try {
     const all = await Expense.find({
-      userId: req.params.userId,
+      userId: req.params.userId
     })
     res.status(200).json(all)
   } catch (error) {
@@ -37,5 +37,5 @@ const getAllExpenseByUserId = async (req, res) => {
 module.exports = {
   getExpenseUser,
   createExpenseUser,
-  getAllExpenseByUserId,
+  getAllExpenseByUserId
 }
