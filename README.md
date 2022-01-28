@@ -32,12 +32,14 @@ $ git clone https://github.com/FidalMathew/API-fest-project
 ```
 ### 3️⃣ Run the project :arrow_up:
 - do ```npm install``` in terminal in the root directory
-- do ```npm start``` in the terminal
 - create a ```.env``` file in the root directory
 - now create the following environment variables given below
 > DB_URI= "MongoDB URI here"
+
 > PORT = 8080 || or desirable port number
+
 > JWT_SECRET = "Enter a secret key of your choice"
+- do ```npm start``` in the terminal
 - Now your good to go !!
 
 ## 💻 Samples:
