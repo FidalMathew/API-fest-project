@@ -7,8 +7,8 @@ const {
 
 const router = Router()
 
+router.post('/expense', createExpenseUser)
 router.get('/getExpenseByUser/:userId', getAllExpenseByUserId)
 router.get('/expense/:id', getExpenseUser)
-router.post('/expense', createExpenseUser)
 
 module.exports = router
