@@ -10,7 +10,8 @@
 ## 🔗 Links
 - [Project Link](https://b-tracker.netlify.app/)
 - [Postman workspace](https://app.getpostman.com/join-team?invite_code=4238df0aec25011bc62434c2e9ca0d5f&target_code=75dad532e99a0b9bce6e3e2b836772db)
-- [Video Explanation]()
+- [Video Explanation](https://drive.google.com/file/d/1qWLyT30z5VZk2J8TLRRN94iOZBx2i5rU/view?usp=sharing)
+- [Deployed Frontend Link](https://adoring-einstein-c9ee34.netlify.app/)
 - [Frontend Repository](https://github.com/FidalMathew/API-fest-Frontend)
 
 <br>
