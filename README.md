@@ -3,13 +3,17 @@
 
 <h2 align="center"> Your personal budget tracking app. </h2>
 
+<br>
+
 <!-- - [PPT]() -->
 
 ## 🔗 Links
 - [Postman workspace](https://app.getpostman.com/join-team?invite_code=4238df0aec25011bc62434c2e9ca0d5f&target_code=75dad532e99a0b9bce6e3e2b836772db)
 
 - [Video Explanation]()
-- [Frontend Repository]()
+- [Frontend Repository](https://github.com/FidalMathew/API-fest-Frontend)
+
+<br>
 
 ## 💡 Features
 - Created personal dashboard for the user to have detail overview of their budget
@@ -17,6 +21,8 @@
 - User can set their income and expenses and the balance will get updated
 - User can compare their target income and expenses with the actual curren income and expenses with the help of chart
 - User can see their cashflow statement and even can download the statement as a pdf
+
+<br>
 
 ## 👣 Steps to run the project 
 ### 1️⃣ Install Node.js
@@ -38,7 +44,9 @@ $ git clone https://github.com/FidalMathew/API-fest-project
 
 > JWT_SECRET = "Enter a secret key of your choice"
 - do ```npm start``` in the terminal
-- Now your good to go !!
+- Now you are good to go !!
+
+<br>
 
 ## 💻 Samples:
 <h3 align="center"> Live Sample Images of the working API in Postman</h3>
@@ -49,7 +57,9 @@ $ git clone https://github.com/FidalMathew/API-fest-project
 <img src="https://github.com/Leoravoe/API-fest-project/blob/main/images/cashflow.png">
 <img src="https://github.com/Leoravoe/API-fest-project/blob/main/images/userDetails.png">
 
-## made with 💕 by 👨‍💻: 
+<br>
+
+## Made with 💕 by 👨‍💻: 
 - [Preetam Sarkar](https://github.com/Leoravoe)
 - [Sayantan Sarkar](https://github.com/sayskar500)
 - [Amrutanshu Dash](https://github.com/AmrutanshuDash)
