@@ -23,6 +23,7 @@ const createExpenseUser = async (req, res) => {
     const deduct = user.balance - expense.amount
     // updating the balance
     user.balance = deduct
+    user.debit = user.debit - expense.amount
     // save the updated value
     await user.save()
     // send response

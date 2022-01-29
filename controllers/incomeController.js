@@ -21,6 +21,7 @@ const createIncomeUser = async (req, res) => {
     // update the user balance
     const add = user.balance + income.income
     user.balance = add
+    user.credit = user.credit + income.income
     // save the updated balance
     await user.save()
     // send response
